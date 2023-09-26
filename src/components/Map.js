@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { Marker, GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "400px",
@@ -36,11 +36,10 @@ const Map = () => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      onLoad={onLoad}
+      zoom={10}
       onUnmount={onUnmount}
     >
-      {/* Child components, such as markers, info windows, etc. */}
-      <></>
+      <Marker position={center} />
     </GoogleMap>
   ) : (
     <></>
